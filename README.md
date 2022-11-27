@@ -6,8 +6,8 @@
 ```
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout root-key.key -out root-crt.crt
 ```
-When answering questions it is a must to set a ```Common Name``` as ```sf-practice.com```. Otherwise, the sertificate will not be accepted when connecting to the server.
-5. Copy ```root-key.key``` and ```root-crt.crt``` to ```/etc/nginx/ssl``` directory.
+When answering questions it is a must to set a ```Common Name``` as ```sf-practice.com```. Otherwise, the sertificate will not be accepted when connecting to the server.  
+5. Copy ```root-key.key``` and ```root-crt.crt``` to ```/etc/nginx/ssl``` directory.  
 6. Make ```server``` blocks in ```/etc/nginx/sites-enabled/default``` config file look like the following:
 ```
 server {
@@ -35,9 +35,9 @@ Use your browser to access the server via a secure protocol:
 ```
 https://<vm-public-ip>
 ```
-It will complain that the connection is not secure. Accept warnings and open the web page. Make sure that information about a certificate reported on the page is correct.  
-9. Create another Ubuntu VM.
-10. Copy the root certificate ```root-crt.crt``` from the server VM.
+It will complain that the connection is not secure. Accept warnings and open the web page. Make sure that information about a certificate reported on the page is correct.    
+9. Create another Ubuntu VM.  
+10. Copy the root certificate ```root-crt.crt``` from the server VM.  
 11. Install the certificate:
 ```
 sudo apt-get install -y ca-certificates
